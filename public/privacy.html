@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Privacy · Launch</title>
+    <style>
+      body {
+        font: 16px/1.7 system-ui;
+        color: #25332f;
+        background: #f8f7f3;
+        max-width: 740px;
+        margin: 60px auto;
+        padding: 0 24px;
+      }
+      a {
+        color: #a51c30;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">← Back to Launch</a>
+    <h1>Privacy</h1>
+    <p>
+      Launch uses two shared access keys. The admin key permits uploads, planning, publishing and
+      password changes. The team key permits viewing the published routes and downloading the plan.
+      There are no individual accounts, account database, analytics or automatic messages.
+    </p>
+    <p>
+      Excel files are first read and validated in your browser. Plan week or Save Excel files saves
+      the original workbooks in the application's private storage, where only admins can retrieve
+      them. Publishing saves selected names, pickup addresses, coordinates, road paths and times for
+      the team view. Unused roster entries, attendance grids and original files are not sent to team
+      users. The server retains the latest input set and published plan until replaced or removed.
+    </p>
+    <p>
+      Signing in sets an HttpOnly session cookie. Keys are stored as salted password hashes on the
+      server; access keys and spreadsheets are not stored in localStorage. Sessions expire, are
+      revoked on logout, and stop authorizing requests when the matching key changes. The page
+      checks sessions every 30 seconds while visible and when you return to the tab. Shared keys
+      cannot identify individual members. Anyone with a team key can copy or download the published
+      route information.
+    </p>
+    <p>
+      The admin page fetches public Pittsburgh weather observations from the National Weather
+      Service using station KAGC and upstream Allegheny River discharge from the USGS Natrona gauge,
+      without sending member information. Planning sends pickup/start/destination locations and
+      date/time settings to TomTom for geocoding and routing, without names or spreadsheet contents.
+      Expanding routes requests TomTom map tiles for the displayed area; existing road shapes are
+      drawn locally without recalculating routes. These services receive ordinary connection
+      information.
+      <a href="https://www.tomtom.com/en-gb/privacy/">TomTom's Privacy Policy</a> applies. Opening
+      navigation links shares the leg's origin and destination with Google Maps under
+      <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
+    </p>
+    <p>
+      Download your signup Sheets yourself and upload the Excel copies. In the cloud version, Google
+      Apps Script stores these copies and the published plan in the site owner's private Google
+      Drive folder. Only the owner authorizes Drive access; team members use their shared access
+      key. The local version stores files on its private server. Formula text, macros and external
+      workbook links are not executed. Downloaded plan files remain on the devices that saved them.
+      Changing a key or unpublishing a plan cannot recall copies already viewed or downloaded.
+    </p>
+    <p>
+      The hosting provider may process ordinary request information. Private files and plan API
+      responses use no-store caching. Public images, map tiles and branding may use the ordinary
+      browser cache. Admins should keep server backups private and delete unneeded downloaded files.
+    </p>
+    <a href="terms.html">Terms of use</a>
+  </body>
+</html>

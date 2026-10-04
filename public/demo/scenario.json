@@ -1,0 +1,14 @@
+{
+  "kind": "broad",
+  "seed": 42,
+  "people": 18,
+  "driverCount": 6,
+  "candidateIds": [
+    "demo-001",
+    "demo-002",
+    "demo-003",
+    "demo-004",
+    "demo-005",
+    "demo-006"
+  ]
+}

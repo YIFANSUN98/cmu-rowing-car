@@ -1,0 +1,60 @@
+{
+  "name": "cmu-rowing-carpool",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "server": "node server/index.ts",
+    "start": "node server/index.ts",
+    "access:init": "node server/access.ts init",
+    "access:rotate": "node server/access.ts rotate",
+    "access:apply": "node server/access.ts apply",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run",
+    "test:browser": "playwright test",
+    "import:legacy": "tsx scripts/import-legacy.ts",
+    "scenario": "tsx scripts/scenario.ts",
+    "benchmark": "tsx scripts/benchmark.ts",
+    "audit:private": "tsx scripts/audit-private.ts",
+    "format": "prettier --write src scripts tests docs/*.md *.ts *.json *.md .github/workflows/*.yml",
+    "estimate:routing": "tsx scripts/routing-usage.ts",
+    "cloud:prepare": "node scripts/cloud.ts prepare",
+    "cloud:configure": "node scripts/cloud.ts configure",
+    "cloud:build": "tsc --noEmit && node scripts/cloud-build.ts",
+    "cloud:check": "node scripts/cloud.ts check",
+    "cloud:migrate": "node scripts/cloud.ts migrate",
+    "cloud:sync-keys": "node scripts/cloud.ts sync-keys",
+    "cloud:deploy": "npm run cloud:check && npm run cloud:build && PUBLIC_BUILD_DIR=dist-cloud npm run audit:private && wrangler pages deploy dist-cloud --project-name cmu-rowing --branch main",
+    "test:cloud-browser": "playwright test --config playwright.cloud.config.ts"
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "2.1.1",
+    "leaflet": "^1.9.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "@google/clasp": "3.4.1",
+    "@noble/hashes": "2.4.0",
+    "@playwright/test": "1.63.0",
+    "@types/google-apps-script": "2.0.13",
+    "@types/google.maps": "3.66.3",
+    "@types/leaflet": "^1.9.21",
+    "@types/node": "26.6.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "esbuild": "0.28.2",
+    "prettier": "3.9.8",
+    "tsx": "4.23.13",
+    "typescript": "7.0.2",
+    "vite": "8.3.0",
+    "vitest": "5.0.1",
+    "wrangler": "4.139.0"
+  }
+}

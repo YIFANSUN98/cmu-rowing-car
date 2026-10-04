@@ -1,0 +1,35 @@
+name: Check private planner
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: '24.21.0'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+        env:
+          VITE_TOMTOM_API_KEY: ${{ vars.TOMTOM_BROWSER_KEY }}
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
+      - run: npm run test:cloud-browser
+      - run: npm run audit:private
+        env:
+          VITE_TOMTOM_API_KEY: ${{ vars.TOMTOM_BROWSER_KEY }}
+      - run: npm run cloud:build
+        env:
+          VITE_TOMTOM_API_KEY: ${{ vars.TOMTOM_BROWSER_KEY }}
+      - run: npm run audit:private
+        env:
+          PUBLIC_BUILD_DIR: dist-cloud
+          VITE_TOMTOM_API_KEY: ${{ vars.TOMTOM_BROWSER_KEY }}

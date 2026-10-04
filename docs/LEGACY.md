@@ -1,0 +1,17 @@
+# Private legacy reconciliation
+
+The local command uses pinned SheetJS 0.20.3, including worksheet cell values and merged ranges. Originals are opened read-only. The source layout is preserved in cell-level evidence; only A/B/E of the member INFO sheet are selected for derived data (name, address, historical car ownership). Formatting-only rows, Sheet5, section labels, and blank cells do not become people.
+
+Weekday aliases include `Mon`, `Tues`, `Wed`, `Thrudasy`, `Thrus` and case variants. Standard numbered car blocks may start on row 1 or row 2. A car's stable evidence key is its sheet/cell position, not its printed number; repeated/skipped car numbers therefore remain distinct. Driver headings and passenger/address pairs are parsed separately from left-hand driver/Rowers lists. Uber headings create external transport evidence. Independent headings outside numbered car blocks are collected too.
+
+Saturday's nonstandard cells are stored as unresolved layout issues with exact source values and references. The importer does not guess their car topology. Extra unexplained cells on other sheets are similarly retained rather than discarded.
+
+Roster IDs are deterministic hashes of normalized full labels; provisional IDs use a separate prefix. Only whitespace/case cleanup and approved alias mappings merge labels. First-name/surname-initial and limited first-name typo matches produce suggestions, not automatic matches. Same-first-name ambiguity stays unresolved. ID collisions are detected; duplicate normalized full roster labels are flagged for human review. If two distinct people have identical names, assign distinct reviewed IDs before canonical use.
+
+Each pickup occurrence retains workbook/sheet/cell provenance. Candidate defaults use the first observed distinct location; multiple locations produce `pickup_status=conflict`. A source's latest address does not silently win. Every historical person/day is staged with unknown attendance and transport, including assignment-only records. Repeated assignment evidence and Rowers/list disagreements remain available to review. Historical driver assignments and old car-ownership flags do not create a current availability matrix.
+
+Local findings matched the source brief: 63 roster entries ending at row 65 (formatting to 904), empty Sheet5, 14 daily sheets, and 29 normalized Rowers labels. Day counts: week 1 = 15/17/15/21; week 3 = 23/13/15/19/15; week 4 = 16/17/19/16/21. Week 3 Tuesday has 23 Rowers labels but 25 people in standard car assignments. No practice dates or confirmed destination were extracted. A non-location status in the roster remains a review issue.
+
+The initial output has 43 provisional labels across all attendance/driver/passenger/self/external evidence and 160 issues. These figures describe review work, not inferred new people or confirmed conflicts in real-world identity. Exact details remain under `data/private/normalized/`; public documentation and test fixtures contain no personal source values. The provided alias/date templates have no fabricated resolutions. After review, rerun the importer and explicitly prepare the canonical files; it never silently promotes drafts into operational data.
+
+The initial-match assertion can be reproduced with 11 unmatched Rowers labels when the abbreviation initial is compared against later name tokens. Restricting the match to only the final name token yields 12, illustrating why compound-name abbreviations remain human review suggestions. Neither convention establishes new people.

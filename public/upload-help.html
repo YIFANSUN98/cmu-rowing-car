@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Upload XLSX · Launch</title>
+    <style>
+      body {
+        font: 16px/1.7 system-ui;
+        color: #25332f;
+        background: #f8f7f3;
+        max-width: 760px;
+        margin: 50px auto;
+        padding: 0 24px;
+      }
+      a {
+        color: #a51c30;
+      }
+      code {
+        background: #e9ebe2;
+        padding: 2px 5px;
+        overflow-wrap: anywhere;
+      }
+      li {
+        margin: 12px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./#workspace">← Back to Launch</a>
+    <h1>Download your files, then upload here</h1>
+    <p>
+      Download each formatted Google Sheet as an Excel file. The website reads the files locally; no
+      Drive connection setup is needed. Sign in as admin to plan with TomTom. Planning saves the
+      Excel originals privately for admins; Publish to team shares only route details.
+    </p>
+    <ol>
+      <li>
+        Open your example folder:
+        <a
+          href="https://drive.google.com/drive/folders/17ln45ZwXJQ5VDp7lH833FNZQAwDPNlY0"
+          target="_blank"
+          rel="noreferrer"
+          >week 1</a
+        >,
+        <a
+          href="https://drive.google.com/drive/folders/1hDyiCbETQT8CSl--1ktoBiviTqTtNUNd"
+          target="_blank"
+          rel="noreferrer"
+          >week 3</a
+        >, or
+        <a
+          href="https://drive.google.com/drive/folders/1esCMrurmU-G8ZTJnqqnAH41BlrSndlJq"
+          target="_blank"
+          rel="noreferrer"
+          >week 4</a
+        >, or
+        <a
+          href="https://drive.google.com/drive/folders/1TGw3g3RqONaK9I7mfNGQT7W22lFitGIO"
+          target="_blank"
+          rel="noreferrer"
+          >week 5</a
+        >. Sign into Google to access your private folders.
+      </li>
+      <li>
+        Open each of the three Sheets: <code>members</code>, <code>attendance</code>, and
+        <code>drivers</code>.
+      </li>
+      <li>In each Sheet choose <b>File → Download → Microsoft Excel (.xlsx)</b>.</li>
+      <li>
+        Return to Launch, click <b>Choose Excel files</b>, and select all three downloads together,
+        or drag and drop them together. Members, Attendance, and Drivers are detected automatically.
+        Only <code>.xlsx</code> is accepted.
+      </li>
+      <li>
+        Resolve any data review checks, then click <b>Plan week</b> to calculate using TomTom online
+        estimates. After changing your Sheets, download again and reupload. Replan to update any
+        stale result.
+      </li>
+    </ol>
+    <p>
+      Past weeks keep their original dates and use matching future weekdays for labeled traffic
+      comparisons.
+    </p>
+    <h2>Simple sheets for members</h2>
+    <ul>
+      <li><b>Members:</b> Name, Pickup address</li>
+      <li><b>Attendance:</b> Names down column A, dates across row 1, Yes/No in the grid</li>
+      <li><b>Drivers:</b> Names down column A, dates across row 1, Yes/No in the grid</li>
+    </ul>
+    <p>
+      Use the same name in every sheet and choose values from the dropdowns. No member IDs are
+      needed. Give different people distinct names. Pickup addresses are used directly, and everyone
+      marked attending needs a carpool seat unless marked in an optional travel tab. Both grids
+      offer <b>Yes</b> or <b>No</b> only. Empty uploaded answers default to No in both grids. A Yes
+      driver uses five total seats, including the driver. There is no Seats column.
+    </p>
+    <p>
+      Keep Attendance as Yes/No. Optional <b>Own travel</b> and <b>Uber</b> tabs in that same
+      workbook use the same grid: Yes marks an independent trip or a required Uber. Those members
+      must also be Yes in Attendance. When club cars lack seats, the planner proposes Uber groups
+      automatically. Uber rides need a separate booking.
+    </p>
+    <p>
+      Use the three formatted example Sheets, with template column names in row 1. The old
+      historical car-assignment layouts need review and conversion first. Keep the date-grid tab
+      names
+      <b>Attendance</b> and <b>Drivers</b> so the uploader can identify them. Filenames do not
+      matter. A workbook containing all three tables can be selected once. Select files from the
+      same week; duplicate tables are rejected. You can also select one replacement file in the same
+      upload area. Hidden archive tabs preserve the original data and are ignored during upload.
+      Edit the visible simple table.
+    </p>
+    <p>
+      Excel date/time cells and TRUE/FALSE cells are supported. If using text, keep dates as
+      <code>YYYY-MM-DD</code> and times as <code>HH:MM</code>. Formula cells need saved results; the
+      app does not calculate formulas. Remove merged cells and fix spreadsheet errors before
+      downloading.
+    </p>
+    <p>
+      Each file must be smaller than 5 MB. The Excel input table must fit within 10,000 rows and 100
+      columns. Resolve unknown attendance and missing pickup addresses, check practice dates, and
+      collect actual driver availability before a real schedule. Car cards show driver and riders;
+      <b>Show route</b> expands the route.
+    </p>
+    <a href="./#workspace">Upload your files →</a>
+  </body>
+</html>

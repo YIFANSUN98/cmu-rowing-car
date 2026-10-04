@@ -1,0 +1,97 @@
+{
+  "timestamp": "2026-09-19T00:43:30.520Z",
+  "runtime": "v24.21.0",
+  "platform": "linux 5.15.0-134-generic",
+  "cpu": "12th Gen Intel(R) Core(TM) i9-12900HK",
+  "logicalCpus": 20,
+  "results": [
+    {
+      "people": 30,
+      "driverCount": 8,
+      "days": 5,
+      "feasible": true,
+      "totalMs": 1145.859122,
+      "search": {
+        "evaluations": 335655,
+        "elapsedMs": 1131.647862,
+        "subsetLimit": 64,
+        "evaluationBudget": 80000,
+        "beamWidth": 96
+      },
+      "driverDays": 30,
+      "baselineMinutes": 400.26666666666665,
+      "plannedMinutes": 424.51666666666665,
+      "dayStatuses": [
+        {
+          "status": "feasible",
+          "alternatives": 37,
+          "budgetExhausted": false
+        },
+        {
+          "status": "feasible",
+          "alternatives": 37,
+          "budgetExhausted": false
+        },
+        {
+          "status": "feasible",
+          "alternatives": 37,
+          "budgetExhausted": false
+        },
+        {
+          "status": "feasible",
+          "alternatives": 37,
+          "budgetExhausted": false
+        },
+        {
+          "status": "feasible",
+          "alternatives": 37,
+          "budgetExhausted": false
+        }
+      ]
+    },
+    {
+      "people": 60,
+      "driverCount": 12,
+      "days": 5,
+      "feasible": true,
+      "totalMs": 36.82397100000003,
+      "search": {
+        "evaluations": 20730,
+        "elapsedMs": 29.915385000000015,
+        "subsetLimit": 64,
+        "evaluationBudget": 80000,
+        "beamWidth": 96
+      },
+      "driverDays": 60,
+      "baselineMinutes": 731.4166666666666,
+      "plannedMinutes": 731.4166666666666,
+      "dayStatuses": [
+        {
+          "status": "feasible",
+          "alternatives": 1,
+          "budgetExhausted": false
+        },
+        {
+          "status": "feasible",
+          "alternatives": 1,
+          "budgetExhausted": false
+        },
+        {
+          "status": "feasible",
+          "alternatives": 1,
+          "budgetExhausted": false
+        },
+        {
+          "status": "feasible",
+          "alternatives": 1,
+          "budgetExhausted": false
+        },
+        {
+          "status": "feasible",
+          "alternatives": 1,
+          "budgetExhausted": false
+        }
+      ]
+    }
+  ]
+}

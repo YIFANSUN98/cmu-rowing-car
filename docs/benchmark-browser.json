@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-09-21T13:57:23.141Z",
+  "browser": "151.0.7922.173",
+  "cpu": "12th Gen Intel(R) Core(TM) i9-12900HK",
+  "logicalCpus": 20,
+  "timezone": "America/Los_Angeles (app uses America/New_York)",
+  "results": [
+    {
+      "people": 30,
+      "driverCount": 8,
+      "days": 5,
+      "wallMs": 1485,
+      "feasible": true
+    },
+    {
+      "people": 60,
+      "driverCount": 12,
+      "days": 5,
+      "wallMs": 158,
+      "feasible": true
+    }
+  ]
+}
