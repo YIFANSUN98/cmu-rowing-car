@@ -85,6 +85,8 @@ fs.writeFileSync(
   JSON.stringify(parsed.issues, null, 2),
 );
 fs.copyFileSync('docs/TUTORIAL.md', path.join(root, 'TUTORIAL.md'));
+fs.copyFileSync('docs/TUTORIAL.pdf', path.join(root, 'TUTORIAL.pdf'));
+fs.cpSync('docs/tutorial-images', path.join(root, 'tutorial-images'), { recursive: true });
 console.log(
   JSON.stringify({ release: root, workbooks: 6, sourceValuesPreserved: true, ...counts }),
 );
